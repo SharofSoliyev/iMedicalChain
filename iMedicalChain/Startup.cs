@@ -69,6 +69,7 @@ namespace iMedicalChain
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
                 .EnableSensitiveDataLogging();
             });
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
     }
 }

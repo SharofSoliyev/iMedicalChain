@@ -1,0 +1,89 @@
+﻿@model IEnumerable<iMedicalChain.Core.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="table-rep-plugin">
+                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                    </div>
+                    <table id="tech-companies-1" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FirstName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LastName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BirhtDay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Adress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PasspordSeriaAndNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PINFL)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BirhtDay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Adress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PasspordSeriaAndNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PINFL)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-primary waves-effect waves-light">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id"  class="btn btn-info waves-effect waves-light">Details</a> |
+                                        <a asp-action="Delete" asp type="button" class="btn btn-danger waves-effect waves-light" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
