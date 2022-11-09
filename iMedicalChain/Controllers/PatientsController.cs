@@ -7,16 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using iMedicalChain.Core;
 using iMedicalChain.Data;
+using iMedicalChain.Services;
+using System.Text.Json;
 
 namespace iMedicalChain.Controllers
 {
     public class PatientsController : Controller
     {
         private readonly AppDataContext _context;
+      private readonly IBlockServices _blockService;
        
 
-        public PatientsController(AppDataContext context)
+        public PatientsController(AppDataContext context,
+            IBlockServices blockServices
+            )
         {
+            _blockService = blockServices;
             _context = context;
         }
 
@@ -59,6 +65,20 @@ namespace iMedicalChain.Controllers
         {
             if (ModelState.IsValid)
             {
+                var last = await _context.Blocks.ToListAsync(); 
+                if(last.Count==0)
+                {
+                    string update = JsonSerializer.Serialize<Patient>(patient);
+
+                   await _blockService.AddBlock(update, "first_block");
+                }
+                else
+                { 
+                    string hash = last[^1].hash;
+                    string update = JsonSerializer.Serialize<Patient>(patient);
+
+                    await _blockService.AddBlock(update, hash);
+                }
                 _context.Add(patient);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

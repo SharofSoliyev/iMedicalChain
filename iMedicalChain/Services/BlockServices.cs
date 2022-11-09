@@ -30,6 +30,7 @@ namespace iMedicalChain.Services
         public static int difficulity = 2;
         public  async Task<bool> AddBlock(string dat = "", string prvHash = "")
         {
+
             int nonce = 0; 
             string timestamp = Convert.ToString(DateTime.Now);
            
