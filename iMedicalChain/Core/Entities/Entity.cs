@@ -1,11 +1,10 @@
-﻿using System;
+﻿using iMedicalChain.Core.Entities.Base;
+using System;
 
 namespace iMedicalChain.Core.Entities
 {
-    public class Entity
+    public class Entity : EntityBase<int>
     {
-
-        public int Id { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime updatedAt { get; set; }
     }

@@ -1,4 +1,5 @@
 using iMedicalChain.Data;
+using iMedicalChain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,9 @@ namespace iMedicalChain
         {
             services.AddControllersWithViews();
                       ConfigureDatabases(services, Configuration);
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IBlockServices, BlockServices>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

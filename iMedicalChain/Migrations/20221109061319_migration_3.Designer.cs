@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using iMedicalChain.Data;
@@ -11,9 +12,11 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20221109061319_migration_3")]
+    partial class migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,9 +33,6 @@ namespace iMedicalChain.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("createdAt")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("data")
                         .HasColumnType("text");
 
@@ -44,9 +44,6 @@ namespace iMedicalChain.Migrations
 
                     b.Property<string>("timestamp")
                         .HasColumnType("text");
-
-                    b.Property<DateTime>("updatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
