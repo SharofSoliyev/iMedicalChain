@@ -1,0 +1,410 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\assets\libs\datatables.net-autofill\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\datatables.net-bs4\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\datatables.net-buttons\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\datatables.net-keytable\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\datatables.net-responsive\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\datatables.net-select\node_modules\datatables.net\License.txt" />
+    <Content Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery\MIT-LICENSE.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\libs\datatables.net-autofill\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\datatables.net-bs4\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\datatables.net-buttons\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\datatables.net-keytable\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\datatables.net-responsive\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\datatables.net-select\node_modules\datatables.net\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\index.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\index.js.flow" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\license" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\templates.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\at-rule.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\comment.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\container.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\css-syntax-error.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\declaration.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\input.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\lazy-result.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\list.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\map-generator.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\node.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\parse.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\parser.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\postcss.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\previous-map.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\processor.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\result.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\root.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\rule.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\stringifier.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\stringify.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\terminal-highlight.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\tokenize.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\vendor.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\warn-once.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\warning.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\bin\rtlcss.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\config-loader.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\config.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\directive-parser.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\plugin.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\rtlcss.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\state.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\util.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\index.js" />
+    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\license" />
+    <None Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery-easing-original\jquery.easing.compatibility.js" />
+    <None Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery-easing-original\jquery.easing.min.js" />
+    <None Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery\jquery.min.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0-rc.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\libs\bootstrap-filestyle2\src\" />
+    <Folder Include="wwwroot\assets\libs\bootstrap-filestyle2\test\" />
+    <Folder Include="wwwroot\assets\libs\flot-charts\examples\" />
+    <Folder Include="wwwroot\assets\libs\flot.curvedlines\examples\" />
+    <Folder Include="wwwroot\assets\libs\flot.curvedlines\tests\" />
+    <Folder Include="wwwroot\assets\libs\gmaps\docs\" />
+    <Folder Include="wwwroot\assets\libs\gmaps\examples\" />
+    <Folder Include="wwwroot\assets\libs\gmaps\test\" />
+    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\types\" />
+    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\docs\" />
+    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\docs\" />
+    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\node_modules\" />
+    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\test\" />
+    <Folder Include="wwwroot\assets\libs\ion-rangeslider\less\skins\" />
+    <Folder Include="wwwroot\assets\libs\jquery-sparkline\src\" />
+    <Folder Include="wwwroot\assets\libs\jquery-steps\demo\" />
+    <Folder Include="wwwroot\assets\libs\jquery-steps\src\" />
+    <Folder Include="wwwroot\assets\libs\jquery-steps\test\" />
+    <Folder Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery-easing-original\example\" />
+    <Folder Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery\dist\" />
+    <Folder Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery\src\" />
+    <Folder Include="wwwroot\assets\libs\jquery.easing\example\" />
+    <Folder Include="wwwroot\assets\libs\jquery.flot.tooltip\examples\" />
+    <Folder Include="wwwroot\assets\libs\jquery.repeater\src\" />
+    <Folder Include="wwwroot\assets\libs\jquery.repeater\test\" />
+    <Folder Include="wwwroot\assets\libs\moment\src\" />
+    <Folder Include="wwwroot\assets\libs\pdfmake\src\" />
+    <Folder Include="wwwroot\assets\libs\table-edits\src\" />
+    <Folder Include="wwwroot\assets\libs\toastr\tests\" />
+    <Folder Include="wwwroot\assets\libs\twitter-bootstrap-wizard\examples\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\assets\images\authentication-bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\bitbucket.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\dribbble.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\dropbox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\github.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\mail_chimp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\brands\slack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\comingsoon-bg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\companies\img-8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\error-img.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\french.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\germany.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\italy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\russia.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\ak.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\ca.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\hi.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\nv.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\or.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\select2\wa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\spain.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\flags\us.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\layouts\layout-1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\layouts\layout-2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\layouts\layout-3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\logo-dark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\logo-light.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\logo-sm-dark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\logo-sm-light.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\maintenance-bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\megamenu-img.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\product\img-6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\images\small\img-7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\apexcharts.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\calendar.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\chartjs.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\coming-soon.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\dashboard.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\datatables.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\ecommerce-add-product.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\ecommerce-cart.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\ecommerce-checkout.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\ecommerce-datatables.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\flot.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\fontawesome.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-advanced.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-editor.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-element.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-mask.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-validation.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-wizard.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\form-xeditable.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\gmaps.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\jquery-knob.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\kanban.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\lightbox.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\materialdesign.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\product-filter-range.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\range-sliders.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\rating-init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\remix-icons-list.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\roundslider.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\session-timeout.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\sparklines.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\sweet-alerts.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\table-editable.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\table-responsive.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\toastr.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\js\pages\vector-maps.init.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
