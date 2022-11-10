@@ -1,0 +1,104 @@
+﻿@model iMedicalChain.Core.SickHistory
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>SickHistory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HospitalName" class="control-label"></label>
+                <input asp-for="HospitalName" class="form-control" />
+                <span asp-validation-for="HospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeToCome" class="control-label"></label>
+                <input asp-for="TimeToCome" class="form-control" />
+                <span asp-validation-for="TimeToCome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SickDefinedTime" class="control-label"></label>
+                <input asp-for="SickDefinedTime" class="form-control" />
+                <span asp-validation-for="SickDefinedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GetHospitalName" class="control-label"></label>
+                <input asp-for="GetHospitalName" class="form-control" />
+                <span asp-validation-for="GetHospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiagnozGetHospitalName" class="control-label"></label>
+                <input asp-for="DiagnozGetHospitalName" class="form-control" />
+                <span asp-validation-for="DiagnozGetHospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiagnozinReception" class="control-label"></label>
+                <input asp-for="DiagnozinReception" class="form-control" />
+                <span asp-validation-for="DiagnozinReception" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClinicalDiagnoz" class="control-label"></label>
+                <input asp-for="ClinicalDiagnoz" class="form-control" />
+                <span asp-validation-for="ClinicalDiagnoz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalDiagnoz" class="control-label"></label>
+                <input asp-for="FinalDiagnoz" class="form-control" />
+                <span asp-validation-for="FinalDiagnoz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainDiagnoz" class="control-label"></label>
+                <input asp-for="MainDiagnoz" class="form-control" />
+                <span asp-validation-for="MainDiagnoz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainSickResult" class="control-label"></label>
+                <input asp-for="MainSickResult" class="form-control" />
+                <span asp-validation-for="MainSickResult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complaints" class="control-label"></label>
+                <input asp-for="Complaints" class="form-control" />
+                <span asp-validation-for="Complaints" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnamnesisMorbi" class="control-label"></label>
+                <input asp-for="AnamnesisMorbi" class="form-control" />
+                <span asp-validation-for="AnamnesisMorbi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnamnesisVitae" class="control-label"></label>
+                <input asp-for="AnamnesisVitae" class="form-control" />
+                <span asp-validation-for="AnamnesisVitae" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdAt" class="control-label"></label>
+                <input asp-for="createdAt" class="form-control" />
+                <span asp-validation-for="createdAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updatedAt" class="control-label"></label>
+                <input asp-for="updatedAt" class="form-control" />
+                <span asp-validation-for="updatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

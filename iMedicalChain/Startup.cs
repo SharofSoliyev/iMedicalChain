@@ -64,6 +64,7 @@ namespace iMedicalChain
 
         public static void ConfigureDatabases(IServiceCollection services, IConfiguration Configuration)
         {
+            Connection.PostTextInfoMessage("start blockchain");
             services.AddDbContext<AppDataContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))

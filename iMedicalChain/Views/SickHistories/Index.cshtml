@@ -1,0 +1,120 @@
+﻿@model IEnumerable<iMedicalChain.Core.SickHistory>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeToCome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SickDefinedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GetHospitalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiagnozGetHospitalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiagnozinReception)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClinicalDiagnoz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalDiagnoz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainDiagnoz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainSickResult)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complaints)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnamnesisMorbi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnamnesisVitae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeToCome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SickDefinedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GetHospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiagnozGetHospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiagnozinReception)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClinicalDiagnoz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalDiagnoz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainDiagnoz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainSickResult)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complaints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnamnesisMorbi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnamnesisVitae)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updatedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

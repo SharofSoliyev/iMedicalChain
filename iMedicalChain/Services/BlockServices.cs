@@ -44,8 +44,11 @@ namespace iMedicalChain.Services
 
                     var Block = new Block ()
                     { timestamp= timestamp,data= dat, hash= newHash,nonce= nonce};
+
+                      Connection.PostTextInfoMessage(timestamp + " " + dat + " " + newHash + " " + nonce + " ");
                      await  _repository.AddAsync(Block);
-              
+                
+
 
                     break;
                 }
