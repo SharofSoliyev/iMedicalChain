@@ -7,59 +7,58 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using iMedicalChain.Core;
 using iMedicalChain.Data;
-using iMedicalChain.Services;
 using System.Text.Json;
+using iMedicalChain.Services;
 
 namespace iMedicalChain.Controllers
 {
-    public class SickHistoriesController : Controller
+    public class DoctorsController : Controller
     {
         private readonly AppDataContext _context;
-        private readonly IBlockServices _blockService;
+        private readonly IBlockServices _blockServices;
 
-
-        public SickHistoriesController(AppDataContext context, IBlockServices blockServices)
+        public DoctorsController(AppDataContext context, IBlockServices blockServices)
         {
             _context = context;
-            this._blockService = blockServices;
+            this._blockServices = blockServices;
         }
 
-        // GET: SickHistories
+        // GET: Doctors
         public async Task<IActionResult> Index()
         {
-              return View(await _context.SickHistories.ToListAsync());
+              return View(await _context.Doctors.ToListAsync());
         }
 
-        // GET: SickHistories/Details/5
+        // GET: Doctors/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.SickHistories == null)
+            if (id == null || _context.Doctors == null)
             {
                 return NotFound();
             }
 
-            var sickHistory = await _context.SickHistories
+            var doctors = await _context.Doctors
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (sickHistory == null)
+            if (doctors == null)
             {
                 return NotFound();
             }
 
-            return View(sickHistory);
+            return View(doctors);
         }
 
-        // GET: SickHistories/Create
+        // GET: Doctors/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: SickHistories/Create
+        // POST: Doctors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HospitalName,TimeToCome,SickDefinedTime,GetHospitalName,DiagnozGetHospitalName,DiagnozinReception,ClinicalDiagnoz,FinalDiagnoz,MainDiagnoz,MainSickResult,Complaints,AnamnesisMorbi,AnamnesisVitae,createdAt,updatedAt,Id")] SickHistory sickHistory)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,BirhtDay,Adress,PasspordSeriaAndNumber,PINFL,PhoneNumber,createdAt,updatedAt,Id")] Doctors doctors)
         {
             if (ModelState.IsValid)
             {
@@ -67,48 +66,48 @@ namespace iMedicalChain.Controllers
                 var last = await _context.Blocks.ToListAsync();
                 if (last.Count == 0)
                 {
-                    string update = JsonSerializer.Serialize<SickHistory>(sickHistory);
+                    string update = JsonSerializer.Serialize<Doctors>(doctors);
 
-                    await _blockService.AddBlock(update, "first_block");
+                    await _blockServices.AddBlock(update, "first_block");
                 }
                 else
                 {
                     string hash = last[^1].hash;
-                    string update = JsonSerializer.Serialize<SickHistory>(sickHistory);
+                    string update = JsonSerializer.Serialize<Doctors>(doctors);
 
-                    await _blockService.AddBlock(update, hash);
+                    await _blockServices.AddBlock(update, hash);
                 }
-                _context.Add(sickHistory);
+                _context.Add(doctors);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(sickHistory);
+            return View(doctors);
         }
 
-        // GET: SickHistories/Edit/5
+        // GET: Doctors/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.SickHistories == null)
+            if (id == null || _context.Doctors == null)
             {
                 return NotFound();
             }
 
-            var sickHistory = await _context.SickHistories.FindAsync(id);
-            if (sickHistory == null)
+            var doctors = await _context.Doctors.FindAsync(id);
+            if (doctors == null)
             {
                 return NotFound();
             }
-            return View(sickHistory);
+            return View(doctors);
         }
 
-        // POST: SickHistories/Edit/5
+        // POST: Doctors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HospitalName,TimeToCome,SickDefinedTime,GetHospitalName,DiagnozGetHospitalName,DiagnozinReception,ClinicalDiagnoz,FinalDiagnoz,MainDiagnoz,MainSickResult,Complaints,AnamnesisMorbi,AnamnesisVitae,createdAt,updatedAt,Id")] SickHistory sickHistory)
+        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,BirhtDay,Adress,PasspordSeriaAndNumber,PINFL,PhoneNumber,createdAt,updatedAt,Id")] Doctors doctors)
         {
-            if (id != sickHistory.Id)
+            if (id != doctors.Id)
             {
                 return NotFound();
             }
@@ -117,12 +116,12 @@ namespace iMedicalChain.Controllers
             {
                 try
                 {
-                    _context.Update(sickHistory);
+                    _context.Update(doctors);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SickHistoryExists(sickHistory.Id))
+                    if (!DoctorsExists(doctors.Id))
                     {
                         return NotFound();
                     }
@@ -133,49 +132,49 @@ namespace iMedicalChain.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(sickHistory);
+            return View(doctors);
         }
 
-        // GET: SickHistories/Delete/5
+        // GET: Doctors/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.SickHistories == null)
+            if (id == null || _context.Doctors == null)
             {
                 return NotFound();
             }
 
-            var sickHistory = await _context.SickHistories
+            var doctors = await _context.Doctors
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (sickHistory == null)
+            if (doctors == null)
             {
                 return NotFound();
             }
 
-            return View(sickHistory);
+            return View(doctors);
         }
 
-        // POST: SickHistories/Delete/5
+        // POST: Doctors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.SickHistories == null)
+            if (_context.Doctors == null)
             {
-                return Problem("Entity set 'AppDataContext.SickHistories'  is null.");
+                return Problem("Entity set 'AppDataContext.Doctors'  is null.");
             }
-            var sickHistory = await _context.SickHistories.FindAsync(id);
-            if (sickHistory != null)
+            var doctors = await _context.Doctors.FindAsync(id);
+            if (doctors != null)
             {
-                _context.SickHistories.Remove(sickHistory);
+                _context.Doctors.Remove(doctors);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SickHistoryExists(int id)
+        private bool DoctorsExists(int id)
         {
-          return _context.SickHistories.Any(e => e.Id == id);
+          return _context.Doctors.Any(e => e.Id == id);
         }
     }
 }

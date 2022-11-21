@@ -50,9 +50,9 @@ namespace iMedicalChain.Controllers
         // GET: SickSheets/Create
         public IActionResult Create()
         {
-            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Discriminator");
-            ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id");
-            ViewData["SickHistoryId"] = new SelectList(_context.SickHistories, "Id", "Id");
+            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id","FirstName");
+            ViewData["PatientId"] = new SelectList(_context.Patients, "Id","FirstName");
+            ViewData["SickHistoryId"] = new SelectList(_context.SickHistories, "Id");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace iMedicalChain.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Discriminator", sickSheet.DoctorsId);
+            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Id", sickSheet.DoctorsId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", sickSheet.PatientId);
             ViewData["SickHistoryId"] = new SelectList(_context.SickHistories, "Id", "Id", sickSheet.SickHistoryId);
             return View(sickSheet);
@@ -88,7 +88,7 @@ namespace iMedicalChain.Controllers
             {
                 return NotFound();
             }
-            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Discriminator", sickSheet.DoctorsId);
+            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Id", sickSheet.DoctorsId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", sickSheet.PatientId);
             ViewData["SickHistoryId"] = new SelectList(_context.SickHistories, "Id", "Id", sickSheet.SickHistoryId);
             return View(sickSheet);
@@ -126,7 +126,7 @@ namespace iMedicalChain.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Discriminator", sickSheet.DoctorsId);
+            ViewData["DoctorsId"] = new SelectList(_context.Doctors, "Id", "Id", sickSheet.DoctorsId);
             ViewData["PatientId"] = new SelectList(_context.Patients, "Id", "Id", sickSheet.PatientId);
             ViewData["SickHistoryId"] = new SelectList(_context.SickHistories, "Id", "Id", sickSheet.SickHistoryId);
             return View(sickSheet);

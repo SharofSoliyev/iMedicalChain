@@ -7,7 +7,6 @@ namespace iMedicalChain.Core
     {
 
     public int DoctorsId { get; set; }
-
     public Doctors Doctors { get; set; }
      public int PatientId { get; set; }
     public Patient Patient { get; set; }
