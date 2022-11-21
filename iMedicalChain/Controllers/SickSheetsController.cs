@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using iMedicalChain.Core;
 using iMedicalChain.Data;
+using System.Text.Json;
+using iMedicalChain.Services;
 
 namespace iMedicalChain.Controllers
 {
     public class SickSheetsController : Controller
     {
         private readonly AppDataContext _context;
-
-        public SickSheetsController(AppDataContext context)
+        private readonly IBlockServices _blockService;
+        public SickSheetsController(AppDataContext context,IBlockServices blockServices)
         {
             _context = context;
+            this._blockService = blockServices;
         }
 
         // GET: SickSheets
@@ -65,6 +68,21 @@ namespace iMedicalChain.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                var last = await _context.Blocks.ToListAsync();
+                if (last.Count == 0)
+                {
+                    string update = JsonSerializer.Serialize<SickSheet>(sickSheet);
+
+                    await _blockService.AddBlock(update, "first_block");
+                }
+                else
+                {
+                    string hash = last[^1].hash;
+                    string update = JsonSerializer.Serialize<SickSheet>(sickSheet);
+
+                    await _blockService.AddBlock(update, hash);
+                }
                 _context.Add(sickSheet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
