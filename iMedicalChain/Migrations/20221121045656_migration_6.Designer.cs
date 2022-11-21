@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using iMedicalChain.Data;
@@ -11,9 +12,11 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20221121045656_migration_6")]
+    partial class migration6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -159,14 +162,17 @@ namespace iMedicalChain.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DoctorsId")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Heigt")
+                        .HasColumnType("numeric");
 
-                    b.Property<int>("PatientId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
 
-                    b.Property<int>("SickHistoryId")
-                        .HasColumnType("integer");
+                    b.Property<DateTime>("RegistrDay")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("numeric");
 
                     b.Property<DateTime>("createdAt")
                         .HasColumnType("timestamp without time zone");
@@ -175,12 +181,6 @@ namespace iMedicalChain.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DoctorsId");
-
-                    b.HasIndex("PatientId");
-
-                    b.HasIndex("SickHistoryId");
 
                     b.ToTable("SickSheets");
                 });
@@ -198,10 +198,6 @@ namespace iMedicalChain.Migrations
 
                     b.Property<DateTime>("BirhtDay")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
@@ -227,44 +223,6 @@ namespace iMedicalChain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
-
-                    b.UseTphMappingStrategy();
-                });
-
-            modelBuilder.Entity("iMedicalChain.Core.Doctors", b =>
-                {
-                    b.HasBaseType("iMedicalChain.Core.User");
-
-                    b.HasDiscriminator().HasValue("Doctors");
-                });
-
-            modelBuilder.Entity("iMedicalChain.Core.SickSheet", b =>
-                {
-                    b.HasOne("iMedicalChain.Core.Doctors", "Doctors")
-                        .WithMany()
-                        .HasForeignKey("DoctorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("iMedicalChain.Core.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("iMedicalChain.Core.SickHistory", "SickHistory")
-                        .WithMany()
-                        .HasForeignKey("SickHistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Doctors");
-
-                    b.Navigation("Patient");
-
-                    b.Navigation("SickHistory");
                 });
 #pragma warning restore 612, 618
         }

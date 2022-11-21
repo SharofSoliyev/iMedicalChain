@@ -14,6 +14,8 @@ namespace iMedicalChain.Data
         public DbSet<Block> Blocks { get; set; }
 
         public DbSet<SickHistory> SickHistories { get; set; }
+
+        public DbSet<Doctors> Doctors { get; set; }
         public AppDataContext(DbContextOptions options) : base(options)
         {
         }
