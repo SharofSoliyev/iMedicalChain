@@ -62,31 +62,6 @@ namespace AmberPOW
         }
 
         static BinaryFormatter formatter = new BinaryFormatter();
-        public static void SaveBlockchain(string filename)
-        {
-            
-            using (FileStream fs = new FileStream(filename + ".amber", FileMode.Create))
-            {
-
-                formatter.Serialize(fs, blockchain);
-            }
-        }
-
-        public static void LoadBlockhain(string filename)
-        {
-            using (FileStream fs = new FileStream(filename + ".amber", FileMode.OpenOrCreate))
-            {
-
-                blockchain = (List<Block>)formatter.Deserialize(fs);
-                foreach(Block blc in blockchain)
-                {
-                    Console.WriteLine("{0}, {1}, {2}, {3}", blc, blc.data, blc.hash, blc.timestamp);
-                }
-            }
-            
-
-
-        }
 
         static string getHash(string ts, string dat, string prvHash, int nonce)
         { 

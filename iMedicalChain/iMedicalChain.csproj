@@ -1,26 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\assets\libs\datatables.net-autofill\node_modules\datatables.net\License.txt" />
-    <Content Include="wwwroot\assets\libs\datatables.net-bs4\node_modules\datatables.net\License.txt" />
-    <Content Include="wwwroot\assets\libs\datatables.net-buttons\node_modules\datatables.net\License.txt" />
-    <Content Include="wwwroot\assets\libs\datatables.net-keytable\node_modules\datatables.net\License.txt" />
-    <Content Include="wwwroot\assets\libs\datatables.net-responsive\node_modules\datatables.net\License.txt" />
-    <Content Include="wwwroot\assets\libs\datatables.net-select\node_modules\datatables.net\License.txt" />
     <Content Include="wwwroot\assets\libs\jquery.easing\bower_components\jquery\MIT-LICENSE.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\assets\libs\datatables.net-autofill\node_modules\datatables.net\js\jquery.dataTables.min.js" />
-    <None Include="wwwroot\assets\libs\datatables.net-bs4\node_modules\datatables.net\js\jquery.dataTables.min.js" />
-    <None Include="wwwroot\assets\libs\datatables.net-buttons\node_modules\datatables.net\js\jquery.dataTables.min.js" />
-    <None Include="wwwroot\assets\libs\datatables.net-keytable\node_modules\datatables.net\js\jquery.dataTables.min.js" />
-    <None Include="wwwroot\assets\libs\datatables.net-responsive\node_modules\datatables.net\js\jquery.dataTables.min.js" />
-    <None Include="wwwroot\assets\libs\datatables.net-select\node_modules\datatables.net\js\jquery.dataTables.min.js" />
     <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\index.js" />
     <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\index.js.flow" />
     <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\chalk\license" />
@@ -92,18 +80,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="2.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.25">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.25">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0-rc.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.2" />
   </ItemGroup>
 
   <ItemGroup>
