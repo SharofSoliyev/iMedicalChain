@@ -37,7 +37,7 @@ namespace iMedicalChain.Services
             while (true)
             {
 
-                string newHash = Hash.getHash(timestamp, dat, prvHash, nonce); //Вычисляем хэш, дополнительно передавая число сложности
+                string newHash = Hash.getHash(timestamp, dat, prvHash, nonce); 
 
                 if (newHash.StartsWith(String.Concat(Enumerable.Repeat("0", difficulity))))
                 {
