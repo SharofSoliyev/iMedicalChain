@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace iMedicalChain.Migrations
 {
-    public partial class migration_1 : Migration
+    public partial class migration_ : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,6 +24,24 @@ namespace iMedicalChain.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Blocks", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ChainUsers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    createdAt = table.Column<DateTime>(nullable: false),
+                    updatedAt = table.Column<DateTime>(nullable: false),
+                    Longituda = table.Column<long>(nullable: false),
+                    Laptituda = table.Column<long>(nullable: false),
+                    LastSync = table.Column<long>(nullable: false),
+                    AllBlock = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ChainUsers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,6 +169,9 @@ namespace iMedicalChain.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Blocks");
+
+            migrationBuilder.DropTable(
+                name: "ChainUsers");
 
             migrationBuilder.DropTable(
                 name: "SickSheets");

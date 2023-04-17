@@ -10,7 +10,16 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="table-rep-plugin">
+                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                    </div>
+                    <table id="tech-companies-1" class="table">
     <thead>
         <tr>
             <th>
@@ -34,12 +43,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.createdAt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.updatedAt)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -67,12 +71,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.createdAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.updatedAt)
-            </td>
+           
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
@@ -82,3 +81,9 @@
 }
     </tbody>
 </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
