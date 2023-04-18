@@ -13,23 +13,23 @@ namespace AmberPOW
 
         public static List<Block> blockchain = new List<Block>();
         static int difficulity = 2;
-        public static void AddBlock(string dat = "genesis", string prvHash = "") //В эту функцию передаются все данные для создания блока 
+        public static void AddBlock(string dat = "saliyev", string prvHash = "") 
         {
-            int nonce = 0; //Число, которое будет менять блокчейн для соответствия сложности
+            int nonce = 0; 
             string timestamp = Convert.ToString(DateTime.Now);
             while (true)
             {
 
-                string newHash = getHash(timestamp, dat, prvHash, nonce); //Вычисляем хэш, дополнительно передавая число сложности
+                string newHash = getHash(timestamp, dat, prvHash, nonce); 
 
                 if (newHash.StartsWith(String.Concat(Enumerable.Repeat("0", difficulity))))
                 {
-                    Console.WriteLine("Ношол!!! {0}, nonce - {1}", newHash, nonce);
+                    Console.WriteLine("Found!!! {0}, nonce - {1}", newHash, nonce);
                     blockchain.Add(new Block(timestamp, dat, newHash, nonce));
 
                     break;
                 }
-                else //Иначе - считать со следующим значением nonce
+                else 
                 {
                     nonce++;
                 }
@@ -53,7 +53,7 @@ namespace AmberPOW
                 }
                 else
                 {
-                    Console.WriteLine("**ять, ***дец, у нас утечка!!!");
+                    Console.WriteLine("Wrong block");
                     return;
                 }
                 
