@@ -10,8 +10,8 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20230417122617_migration_2")]
-    partial class migration_2
+    [Migration("20230419060704_migration_3")]
+    partial class migration_3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace iMedicalChain.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("data")
@@ -43,7 +43,7 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("timestamp")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
@@ -61,22 +61,22 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("AllBlock")
                         .HasColumnType("text");
 
-                    b.Property<long>("Laptituda")
-                        .HasColumnType("bigint");
+                    b.Property<float>("Laptituda")
+                        .HasColumnType("real");
 
                     b.Property<long>("LastSync")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("Longituda")
-                        .HasColumnType("bigint");
+                    b.Property<float>("Longituda")
+                        .HasColumnType("real");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
@@ -112,10 +112,10 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
@@ -169,10 +169,10 @@ namespace iMedicalChain.Migrations
                     b.Property<DateTime>("TimeToCome")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
@@ -196,10 +196,10 @@ namespace iMedicalChain.Migrations
                     b.Property<int>("SickHistoryId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
@@ -251,10 +251,10 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("createdAt")
+                    b.Property<DateTime?>("createdAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("updatedAt")
+                    b.Property<DateTime?>("updatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");

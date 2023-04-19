@@ -10,7 +10,7 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20230417104917_migration_1")]
+    [Migration("20230419045606_migration_1")]
     partial class migration_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,6 +69,9 @@ namespace iMedicalChain.Migrations
 
                     b.Property<long>("Longituda")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("createdAt")
                         .HasColumnType("timestamp without time zone");

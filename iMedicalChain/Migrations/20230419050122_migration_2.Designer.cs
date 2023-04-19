@@ -10,8 +10,8 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20230417034809_migration_!")]
-    partial class migration_
+    [Migration("20230419050122_migration_2")]
+    partial class migration_2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,14 +61,17 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("AllBlock")
                         .HasColumnType("text");
 
-                    b.Property<long>("Laptituda")
-                        .HasColumnType("bigint");
+                    b.Property<float>("Laptituda")
+                        .HasColumnType("real");
 
                     b.Property<long>("LastSync")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("Longituda")
-                        .HasColumnType("bigint");
+                    b.Property<float>("Longituda")
+                        .HasColumnType("real");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("createdAt")
                         .HasColumnType("timestamp without time zone");
@@ -239,7 +242,13 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("PasspordSeriaAndNumber")
                         .HasColumnType("text");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("text");
+
                     b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Username")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("createdAt")

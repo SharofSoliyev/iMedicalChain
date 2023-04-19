@@ -5,8 +5,8 @@ namespace iMedicalChain.Core
     public class ChainUsers : Entity
     {
         public int UserId { get; set; }
-        public long Longituda { get; set; }
-        public long Laptituda { get; set;}
+        public float Longituda { get; set; }
+        public float Laptituda { get; set;}
 
         public long LastSync { get; set; }
 

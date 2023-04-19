@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace iMedicalChain.Migrations
 {
-    public partial class migration_ : Migration
+    public partial class migration_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -34,6 +34,7 @@ namespace iMedicalChain.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     createdAt = table.Column<DateTime>(nullable: false),
                     updatedAt = table.Column<DateTime>(nullable: false),
+                    UserId = table.Column<int>(nullable: false),
                     Longituda = table.Column<long>(nullable: false),
                     Laptituda = table.Column<long>(nullable: false),
                     LastSync = table.Column<long>(nullable: false),
@@ -107,6 +108,8 @@ namespace iMedicalChain.Migrations
                     PasspordSeriaAndNumber = table.Column<string>(nullable: true),
                     PINFL = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
                     Discriminator = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
