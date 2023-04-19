@@ -10,7 +10,7 @@ using iMedicalChain.Data;
 namespace iMedicalChain.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20230213053329_migration_1")]
+    [Migration("20230417104917_migration_1")]
     partial class migration_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,36 @@ namespace iMedicalChain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Blocks");
+                });
+
+            modelBuilder.Entity("iMedicalChain.Core.ChainUsers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("AllBlock")
+                        .HasColumnType("text");
+
+                    b.Property<long>("Laptituda")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("LastSync")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("Longituda")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("createdAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("updatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ChainUsers");
                 });
 
             modelBuilder.Entity("iMedicalChain.Core.Patient", b =>
@@ -209,7 +239,13 @@ namespace iMedicalChain.Migrations
                     b.Property<string>("PasspordSeriaAndNumber")
                         .HasColumnType("text");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("text");
+
                     b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Username")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("createdAt")

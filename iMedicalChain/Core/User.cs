@@ -32,5 +32,10 @@ namespace iMedicalChain.Core
 
         public string PhoneNumber { get; set; }
 
+        [DisplayName("Username")]
+        public string Username { get; set; }
+        [DisplayName("Password")]
+        public string Password { get; set; }
+
     }
 }
